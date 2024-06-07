@@ -16,8 +16,6 @@
             //On se connecte a la BDD
             require_once("connexion.php");
 
-
-
             //On ajoute les vérifications : 
                 // ETAPE 1 : Vérification de l'existence de l'e-mail
                 $sql_mail_verif = "SELECT COUNT(*) AS nb_emails FROM users WHERE email = :email";
@@ -47,9 +45,7 @@
                     }
                 }
 
-
-                
-            //on écrit la requête sql
+            //on écrit la requête sql d'inscription
             $sql = "INSERT INTO users(username, email, pass) VALUES (:pseudo, :email, '$pass')";
 
             $requete = $db->prepare($sql);
